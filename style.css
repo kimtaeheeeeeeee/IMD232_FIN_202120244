@@ -1,0 +1,199 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.125rem;
+  line-height: 2rem;
+  overflow: hidden;
+  margin: 0;
+  font-family: 'Spoqa Han Sans Neo', sans-serif;
+  font-weight: 400;
+  color: oklch(90% 0 0/1);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  background-color: #847e7c;
+}
+@media (width < 60rem) {
+  body {
+    font-size: 1rem;
+    line-height: 1.75rem;
+  }
+}
+@media (width < 40rem) {
+  body {
+    word-break: break-all;
+    overflow-wrap: anywhere;
+  }
+}
+
+p {
+  font-size: 1.125rem;
+  line-height: 2rem;
+  max-width: 93ch;
+  margin-block: 0.5em;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+@media (width < 60rem) {
+  p {
+    font-size: 1rem;
+    line-height: 1.75rem;
+    max-width: 93ch;
+  }
+}
+@media (width < 40rem) {
+  p {
+    word-break: break-all;
+    overflow-wrap: anywhere;
+  }
+}
+
+a {
+  color: oklch(80% 0.135 0/1);
+  text-decoration: none;
+}
+a:visited {
+  color: oklch(80% 0.05 0/1);
+}
+
+li + li {
+  margin-top: 0.5em;
+}
+
+dt {
+  font-weight: 700;
+}
+
+dd + dt {
+  margin-top: 0.5em;
+}
+
+img,
+video,
+svg,
+canvas {
+  display: block;
+  position: center;
+  max-width: 100%;
+  width: 850px;
+  height: 850px;
+}
+
+.viewport {
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100dvh;
+}
+
+.container {
+  box-sizing: content-box;
+  max-width: 60rem;
+  margin-inline: auto;
+  padding-block: 2.5rem;
+  padding-inline: 5rem;
+}
+@media (width < 100rem) {
+  .container {
+    padding-block: 2.5rem;
+    padding-inline: 2.5rem;
+  }
+}
+@media (width < 60rem) {
+  .container {
+    padding-block: 2rem;
+    padding-inline: 2rem;
+  }
+}
+@media (width < 40rem) {
+  .container {
+    padding-block: 2rem;
+    padding-inline: 1.5rem;
+  }
+}
+
+.table,
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, max-content) minmax(15.5ch, 1fr);
+  row-gap: 0.5em;
+  -moz-column-gap: 1.5em;
+  column-gap: 1.5em;
+}
+.table--col-3,
+.grid--col-3 {
+  grid-template-columns: repeat(2, max-content) minmax(15.5ch, 1fr);
+}
+.table--col-4,
+.grid--col-4 {
+  grid-template-columns: repeat(3, max-content) minmax(15.5ch, 1fr);
+}
+.table--col-5,
+.grid--col-5 {
+  grid-template-columns: repeat(4, max-content) minmax(15.5ch, 1fr);
+}
+.table--col-6,
+.grid--col-6 {
+  grid-template-columns: repeat(5, max-content) minmax(15.5ch, 1fr);
+}
+.table--col-7,
+.grid--col-7 {
+  grid-template-columns: repeat(6, max-content) minmax(15.5ch, 1fr);
+}
+.table--col-8,
+.grid--col-8 {
+  grid-template-columns: repeat(7, max-content) minmax(15.5ch, 1fr);
+}
+.table--numbering,
+.grid--numbering {
+  counter-reset: table-counter;
+}
+.table .header,
+.grid .header {
+  font-weight: 700;
+}
+.table .number::before,
+.grid .number::before {
+  content: counter(table-counter);
+  counter-increment: table-counter;
+}
+.table > * > * + *,
+.grid > * > * + * {
+  margin-top: 0.25em;
+}
+
+.table {
+  overflow-x: auto;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 100%;
+  padding: 2rem;
+  background-color: oklch(17% 0 0/1);
+}
+@media (width < 60rem) {
+  .table {
+    padding: 1rem;
+  }
+}
+.table::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+.table::-webkit-scrollbar-track {
+  background-color: oklch(22% 0 0/1);
+}
+.table::-webkit-scrollbar-thumb {
+  background-color: oklch(60% 0 0/1);
+}
+
+#waterCanvasContainer {
+  position: relative;
+  margin: auto;
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+  background-color: #000000;
+  top: 80px;
+}
